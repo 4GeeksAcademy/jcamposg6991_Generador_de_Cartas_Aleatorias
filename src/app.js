@@ -2,9 +2,6 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
 window.onload = function() {
   const simbolos = ["♦", "♥", "♠", "♣"];
   const numeros = [
@@ -18,7 +15,7 @@ window.onload = function() {
   const btnGenerar = document.getElementById("btnGenrar");
   const simbolTop = document.querySelectorAll("#simbol")[0];
   const simbolBottom = document.querySelectorAll("#simbol")[1];
-  const numberEl = document.getElementById("number");
+  const numberElement = document.getElementById("number");
 
   function generarCarta() {
     const simboloAleatorio =
@@ -27,13 +24,13 @@ window.onload = function() {
 
     simbolTop.textContent = simboloAleatorio;
     simbolBottom.textContent = simboloAleatorio;
-    numberEl.textContent = numeroAleatorio;
+    numberElement.textContent = numeroAleatorio;
 
     const color =
       simboloAleatorio === "♦" || simboloAleatorio === "♥" ? "red" : "black";
     simbolTop.style.color = color;
     simbolBottom.style.color = color;
-    numberEl.style.color = color;
+    numberElement.style.color = color;
   }
 
   btnGenerar.addEventListener("click", generarCarta);
